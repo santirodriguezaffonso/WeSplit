@@ -8,9 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var tapCount = 0
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView {
+            Form {
+                Section {
+                    Text("Counting \(tapCount)")
+                }
+                Section {
+                    Button("Plus by 1") {
+                        tapCount += 1
+                    }
+                }
+            }
+            .navigationTitle("Form")
+        }
     }
 }
 
